@@ -1,0 +1,43 @@
+#root {
+  text-align: center;
+}
+
+.loginImg {
+  max-height: 120px;
+  margin-top: 30px;
+}
+
+.BlocAuth {
+  background-image: url("../../assets/login-img1.jpg");
+  min-height: 100vh;
+  background-size: cover;
+  text-shadow: 2px 2px 8px #5753c15d;
+  background-position: left top;
+}
+
+.BlocFormAuth {
+  height: 100vh;
+}
+
+.FormAuth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.595);
+}
+
+.text-purple {
+  color: #5653c1;
+}
+
+.btn-purple {
+  background-color: #5653c1 !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.btn-purple:hover {
+  background-color: #3d3b82 !important;
+  color: white !important;
+  border: 1px solid white !important;
+}

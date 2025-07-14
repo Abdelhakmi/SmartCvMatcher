@@ -60,22 +60,6 @@ export default function ProfileList() {
         <div style={styles.content}>
           <div className="">
             <dir className="container pt-5">
-              <div className="d-flex align-items-center mb-4">
-                <Link to="/upload" className="col-2">
-                  <button className="btn btn-light me-3">
-                    <ArrowLeft className="me-2" />
-                    Page précédente
-                  </button>
-                </Link>
-                <div className="col-8">
-                  <h2 className="titleProfileList text-center flex-grow-1 text-white">
-                    <PersonBoundingBox /> Les profils qui conviennent le mieux à
-                    vos besoins
-                  </h2>
-                </div>
-                {/* <div className="col-2"></div> */}
-              </div>
-
               <div className="table-responsive shadow rounded border bg-white">
                 <table className="table table-hover align-middle">
                   <thead>
@@ -109,7 +93,7 @@ export default function ProfileList() {
                   </thead>
                   <tbody>
                     {/* Exemple de profils statiques */}
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((_, i) => (
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9,  10].map((_, i) => (
                       <tr key={`static-${i}`}>
                         <td>John Doe</td>
                         <td>test@gmail.com</td>

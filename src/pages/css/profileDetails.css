@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 /* :::::::::::::::::::::::::: */
 
 .video-container {
@@ -25,4 +29,45 @@
   top: 50%;
   transform: translateY(-50%);
   padding: 0 20px;
+}
+
+ul.styled-list,
+ul.styled-list1 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.styled-list li,
+ul.styled-list1 li {
+  background: rgba(0, 0, 0, 0.56);
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s;
+}
+
+ul.styled-list li::before {
+  content: "➔";
+  color: #7f00ff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+ul.styled-list1 li::before {
+  content: "✓";
+  color: #7f00ff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+ul.styled-list li:hover,
+ul.styled-list1 li:hover {
+  background: #18002f;
+  border: 1px solid white;
 }

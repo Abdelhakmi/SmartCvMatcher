@@ -58,7 +58,7 @@ export default function ProfileList() {
           Votre navigateur ne supporte pas les vidéos HTML5.
         </video>
         <div style={styles.content}>
-          <div className="">
+          <div className="pt-5">
             <dir className="container pt-5">
               <div className="table-responsive shadow rounded border bg-white">
                 <table className="table table-hover align-middle">

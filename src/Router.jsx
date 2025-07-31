@@ -8,7 +8,6 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/auth" element={<Authenticate />} /> */}
         <Route path="/" element={<Login />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/profiles" element={<ProfileList />} />

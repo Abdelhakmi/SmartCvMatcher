@@ -19,13 +19,13 @@ export default function Login() {
             <span className="text-light">poste.</span>{" "}
           </h2>
           <div className="BlocRightLogin p-3 me-5">
-            <div className="DIV2 col-5 rounded ">
-              <div className="FormLogin m-5  rounded p-5 shadow text-purple ">
+            <div className="DIV2 col-5 rounded p-3">
+              <div className="col-10 FormLogin m-5  rounded p-5 shadow text-purple ">
                 <h3 className="mb-5 fw-bold">AUTHENTIFICATION</h3>
                 <form>
-                  <div className="input-group mb-3 border border-dark rounded">
+                  <div className=" input-group mb-3 border border-dark rounded">
                     <div className="input-group-prepend ">
-                      <span className="input-group-text " id="basic-addon1">
+                      <span className="input-group-text" id="basic-addon1">
                         <span><Person/></span>
                       </span>
                     </div>
@@ -44,7 +44,7 @@ export default function Login() {
                       </span>
                     </div>
                     <input
-                      type="text"
+                      type="password"
                       className="form-control"
                       placeholder="Password"
                       aria-label="Password"

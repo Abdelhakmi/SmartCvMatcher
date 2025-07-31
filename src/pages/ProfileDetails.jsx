@@ -14,16 +14,12 @@ import {
   PersonVcard,
   UiChecks,
 } from "react-bootstrap-icons";
-import { Link } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 
 export default function ProfileDetails() {
   const matchPercentage = 90;
   const radius = 50;
   const circumference = 2 * Math.PI * radius;
-  const dashArray = `${
-    circumference * (matchPercentage / 100)
-  }, ${circumference}`;
   const iframeContainerRef = useRef(null);
   const [animatedPercentage, setAnimatedPercentage] = useState(0);
 
@@ -124,21 +120,21 @@ export default function ProfileDetails() {
   };
 
   useEffect(() => {
-  let current = 0;
-  const speed = 15; // ms between steps
-  const step = 1;   // increase by 1 each time
+    let current = 0;
+    const speed = 15; // ms between steps
+    const step = 1; // increase by 1 each time
 
-  const interval = setInterval(() => {
-    current += step;
-    if (current <= matchPercentage) {
-      setAnimatedPercentage(current);
-    } else {
-      clearInterval(interval);
-    }
-  }, speed);
+    const interval = setInterval(() => {
+      current += step;
+      if (current <= matchPercentage) {
+        setAnimatedPercentage(current);
+      } else {
+        clearInterval(interval);
+      }
+    }, speed);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <GlobalLayout>
@@ -200,7 +196,9 @@ export default function ProfileDetails() {
                       stroke="#7f00ff"
                       strokeWidth="12"
                       fill="none"
-                      strokeDasharray={`${circumference * (animatedPercentage / 100)}, ${circumference}`}
+                      strokeDasharray={`${
+                        circumference * (animatedPercentage / 100)
+                      }, ${circumference}`}
                       strokeLinecap="round"
                       transform="rotate(-90 60 60)"
                     />
@@ -228,7 +226,7 @@ export default function ProfileDetails() {
                   <li>Email : john.doe@email.com</li>
                   <li>Ville : Casablanca</li>
                   <li>Années d'expérience : 7ans</li>
-                  <li>Nationalité : Marocaine</li>
+                  <li>Diplôme le plus élevé : Master </li>
                 </ul>
               </div>
             </div>
@@ -305,6 +303,7 @@ export default function ProfileDetails() {
                 height="600px"
                 style={{ border: "none", borderRadius: "8px" }}
                 title="CV du candidat"
+                className="border rounded"
               ></iframe>
             </div>
           </div>

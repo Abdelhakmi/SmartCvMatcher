@@ -2,11 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import {
-  ArrowLeft,
   Envelope,
-  Geo,
   PersonBadge,
-  PersonBoundingBox,
   PersonVcardFill,
   PersonWorkspace,
   PinMap,
@@ -15,6 +12,23 @@ import {
 import "./css/profileList.css";
 import GlobalLayout from "../Layouts/GlobalLayout";
 import VIDEO from "../assets/video_bg_A.mp4";
+
+function AnimatedPercentage({ value, duration = 1000 }) {
+  const [displayedValue, setDisplayedValue] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const stepTime = Math.max(duration / value, 10); // éviter que ça aille trop vite
+    const timer = setInterval(() => {
+      start += 1;
+      setDisplayedValue(start);
+      if (start >= value) clearInterval(timer);
+    }, stepTime);
+    return () => clearInterval(timer);
+  }, [value, duration]);
+
+  return <span className="badge bg-black">{displayedValue}%</span>;
+}
 
 export default function ProfileList() {
   const styles = {
@@ -93,14 +107,14 @@ export default function ProfileList() {
                   </thead>
                   <tbody>
                     {/* Exemple de profils statiques */}
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9,  10].map((_, i) => (
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => (
                       <tr key={`static-${i}`}>
                         <td>John Doe</td>
                         <td>test@gmail.com</td>
                         <td>Développeur Web</td>
                         <td>Casablanca</td>
                         <td className="text-center">
-                          <span className="badge bg-black">{90 - i}%</span>
+                          <AnimatedPercentage value={90 - i} />
                         </td>
                         <td className="text-center">
                           <Link to="/profiles/detail">
@@ -125,11 +139,10 @@ export default function ProfileList() {
                     <td>{p.job_preferences?.desired_positions?.[0]}</td>
                     <td>{p.personal_info?.location}</td>
                     <td className="text-center">
-                      <span className="badge bg-success">
-                        {p.matching_percentage
-                          ? `${p.matching_percentage}%`
-                          : "N/A"}
-                      </span>
+                      {p.matching_percentage != null 
+                      ? (<AnimatedPercentage value={p.matching_percentage} />) 
+                      : ( <span className="badge bg-secondary">N/A</span>
+                      )}
                     </td>
                     <td className="text-center">
                       <button

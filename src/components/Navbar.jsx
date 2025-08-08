@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./css/navbar.css";
-import logoSCM from "../assets/scm-logo.png";
+import logo from "../assets/13-removebg-preview.png";
 import { useContext } from "react";
 import {
   ArrowLeft,
@@ -16,22 +16,22 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg fixed-top bg-nav border-bottom p-3">
+    <nav className="navbar navbar-expand-lg fixed-top bg-nav border-bottom pt-2">
       <div className="container-fluid">
         <span
-          className="navbar-brand text-white fw-bold border-end pe-3"
-          style={{ fontSize: "1.5rem", cursor: "pointer" }}
+          className="navbar-brand text-white fw-bold border-end pe-1 pt-2"
+          style={{cursor: "pointer" }}
         >
-          SCM-AI
+         <img src={logo} className="logo rounded" alt="" />
         </span>
         {location.pathname == "/upload" ? (
-          <div className="col-1"></div>
+          <div className=""></div>
         ) : (
           <Link
             to={
               location.pathname == "/profiles/detail" ? "/profiles" : "/upload"
             }
-            className=""
+            className="col-2"
           >
             <button className="btn btn-outline-light me-3 shadow">
               <ArrowLeft className="me-2" />
@@ -62,7 +62,7 @@ const Navbar = () => {
           </h2>
         </div>
 
-        <div className="d-flex ms-auto ">
+        <div className="d-flex ms-auto col-2">
           <Link to="/" className="Link">
             <button className="btn btn-outline-light d-flex align-items-center">
               <BoxArrowRight className="me-2" />

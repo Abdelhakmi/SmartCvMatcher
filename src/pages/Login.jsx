@@ -1,8 +1,7 @@
 import "./css/login.css";
-import scmLogin from "../assets/scm-logo1.png";
 import { Link } from "react-router-dom";
 import ButtonPurple from "../components/MyButton";
-import { Lock, Person } from "react-bootstrap-icons";
+import { Buildings, Lock, Person } from "react-bootstrap-icons";
 
 export default function Login() {
   return (
@@ -12,7 +11,7 @@ export default function Login() {
           {/* <img src={scmLogin} alt="loginImg" className="loginImg" /> */}
           <h2 className="mt-4 text-purple-light fixed-top">
             Avec{" "}
-            <span className="text-light bolder">SCM-AI (Smart Cv Matcher)</span>
+            <span className="text-light bolder">lematching.com</span>
             {" : "}
             trouvez le bon <span className="text-light">talent</span> , au bon{" "}
             <span className="text-light">moment</span> , pour le bon{" "}
@@ -26,13 +25,31 @@ export default function Login() {
                   <div className=" input-group mb-3 border border-dark rounded">
                     <div className="input-group-prepend ">
                       <span className="input-group-text" id="basic-addon1">
-                        <span><Person/></span>
+                        <span>
+                          <Buildings />
+                        </span>
                       </span>
                     </div>
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Username"
+                      placeholder="Nom de votre société"
+                      aria-label="CompanyName"
+                      aria-describedby="basic-addon1"
+                    />
+                  </div>
+                  <div className=" input-group mb-3 border border-dark rounded">
+                    <div className="input-group-prepend ">
+                      <span className="input-group-text" id="basic-addon1">
+                        <span>
+                          <Person />
+                        </span>
+                      </span>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Nom d'utilisateur"
                       aria-label="Username"
                       aria-describedby="basic-addon1"
                     />
@@ -40,13 +57,15 @@ export default function Login() {
                   <div className="input-group mb-3 border border-dark rounded">
                     <div className="input-group-prepend">
                       <span className="input-group-text" id="basic-addon1">
-                        <span><Lock/></span>
+                        <span>
+                          <Lock />
+                        </span>
                       </span>
                     </div>
                     <input
                       type="password"
                       className="form-control"
-                      placeholder="Password"
+                      placeholder="Mot de passe"
                       aria-label="Password"
                       aria-describedby="basic-addon1"
                     />

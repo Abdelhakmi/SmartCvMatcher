@@ -59,3 +59,7 @@
 .DIV2{
   /* background-size: contain; */
 }
+
+.logo{
+  max-width: 100px;
+}

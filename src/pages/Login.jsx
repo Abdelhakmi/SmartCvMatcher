@@ -2,6 +2,8 @@ import "./css/login.css";
 import { Link } from "react-router-dom";
 import ButtonPurple from "../components/MyButton";
 import { Buildings, Lock, Person } from "react-bootstrap-icons";
+import logo from "../assets/13-removebg-preview.png";
+
 
 export default function Login() {
   return (
@@ -11,7 +13,7 @@ export default function Login() {
           {/* <img src={scmLogin} alt="loginImg" className="loginImg" /> */}
           <h2 className="mt-4 text-purple-light fixed-top">
             Avec{" "}
-            <span className="text-light bolder">lematching.com</span>
+            <img src={logo} className="logo" alt="" />
             {" : "}
             trouvez le bon <span className="text-light">talent</span> , au bon{" "}
             <span className="text-light">moment</span> , pour le bon{" "}

@@ -62,10 +62,10 @@ const Navbar = () => {
           </h2>
         </div>
 
-        <div className="d-flex ms-auto col-2">
+        <div className="d-flex ms-auto ">
           <Link to="/" className="Link">
-            <button className="btn btn-outline-light d-flex align-items-center">
-              <BoxArrowRight className="me-2" />
+            <button className="btn btn-outline-light d-flex align-items-center justufy-content-end">
+              <BoxArrowRight className="centred me-2" />
               Se déconnecter
             </button>
           </Link>
